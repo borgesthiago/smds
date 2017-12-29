@@ -7,9 +7,10 @@ $senha = sha1($_POST['senha']);
 
 require ("conexao.php");
 #include_once("conexao.php");
+$pdo  = Conexao::getInstance(Conexao::getInstance());
 try{
 	
-$consulta = $conecta->prepare('SELECT * FROM usuarios where login=:login and senha = :senha');
+$consulta = $pdo->prepare('SELECT * FROM login where login=:login and senha = :senha');
 $consulta->bindParam(':login', $login,PDO::PARAM_STR);
 $consulta->bindParam(':senha', $senha,PDO::PARAM_STR);
 $consulta->execute();
@@ -31,11 +32,10 @@ if(empty($linha)){
 	$_SESSION['usuarioId'] 			= $linha['id'];
 	$_SESSION['usuarioNome'] 		= $linha['nome'];
 	$_SESSION['usuarioNivelAcesso'] = $linha['nivel_acesso_id'];
-	$_SESSION["usuarioNum_Auto"] = $linha['num_auto'];
 		
 if($_SESSION['usuarioNivelAcesso'] ==1){
 	
-	header("Location:../sup/administrativo.php");
+	header("Location:gestor.php");
 }	else{
 if($_SESSION['usuarioNivelAcesso'] ==2){
 	
