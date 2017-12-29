@@ -1,7 +1,10 @@
 <?php session_start();?>
 <!DOCTYPE html>
 <html>
-<?php require "head.php";?>
+<?php 
+require "head.php"; 
+require_once "modal.php";
+?>
 
 <script type="text/javascript">
 function mascaraMutuario(o,f){
@@ -51,7 +54,7 @@ function cpf(v){
 				$_SESSION['usuarioNum_Auto']);
 	?>
  
-                        <form class="form-signin" method="POST" action="gestor.php" enctype="multipart/form-data">
+                        <form class="form-signin" method="POST" action="valida_login.php" enctype="multipart/form-data">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Digite seu CPF, apenas números" onkeypress='mascaraMutuario(this,cpf)' name="login" onblur='clearTimeout()' id="cpfcnpj"  type="text" autofocus>
@@ -61,7 +64,7 @@ function cpf(v){
                                 </div>
                                
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type='submit' class='btn btn-lg btn-success btn-block'>Entrar</a>
+                                <button type='submit' class='btn btn-lg btn-success btn-block' >Entrar</a>
                             </fieldset>
                         </form>
                     </div>
@@ -69,15 +72,10 @@ function cpf(v){
             </div>
         </div>
     </div>
-    
-	  <?php 
-		//$link = "../iop/primeiro_acesso.php";
-	  ?>
-		  <!--	<div align="center"><a href="<?php //echo $link;?>" target="_blank" >Clique Aqui</a></div>-->
-		<p class="text-center text-danger">
+    <p class="text-center text-danger">
 			<?php
 				if(isset($_SESSION['loginErro'])){
-					echo $_SESSION['loginErro'];
+                   include_once "erro.php";                                    
 					unset ($_SESSION['loginErro']); #destroi a variável depois do erro
 				}
 			?>
@@ -103,5 +101,6 @@ function cpf(v){
     });
   });
 </script>
+
 </body>
 </html>

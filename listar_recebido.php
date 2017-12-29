@@ -4,8 +4,64 @@
 <?php require "head.php";?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-<?php require "top.php";?>
- <?php require "nav.php";?>
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="gestor.php" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>P</b>GT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">Painel <b>Gestores</b></span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             
+              <span class="hidden-xs">Thiago Borges</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="img/pmsg.jpg" class="img-circle" alt="User Image">
+                <p>
+                  Thiago Borges - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+           
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+ <?PHP require "nav.php";?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,18 +81,74 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="row">
-        <div class="col-md-10 col-sm-6 col-xs-12">
-			 <!-- general form elements -->
-			 <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Quick Example</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+        <h3 class="box-title">Listagem</h3>
            
+            <div id="toolbar" class="btn-group">
+              <a href="criar_noticia.php"><button type="button" class="btn btn-default" title="Incluir nova Notícia!">
+                <i class="glyphicon glyphicon-plus"></i>
+              </button></a>
+              <a href="noticiabox.php"><button type="button" class="btn btn-default" title="Todas as Notícias!">
+              <i class="fa fa-star text-blue"></i>
+          </button></a>
+          <a href="noticia_destaque.php"><button type="button" class="btn btn-default" title=" Notícias em destaque!">
+          <i class="fa fa-star text-yellow"></i>
+          </button></a>
+          <a href="noticia_normal.php"><button type="button" class="btn btn-default" title=" Notícias não de destaque">
+          <i class="fa fa-star-o text"></i>
+          </button></a>
+              <a href="#"><button type="submit" class="btn btn-default"  onclick="return confirm('Deseja realmente EXCLUIR a notícia?');" title="Exclui as Notícias selecionadas!">
+                  <i class="glyphicon glyphicon-trash"></i>
+              </button></a>
           </div>
-          <!-- /.box -->
-		</div>
+            <table id="tableListaNoticia"
+              data-toggle="table" 
+              data-pagination="true" 
+              data-sort-name="noticia"
+              data-search="true"
+              data-show-toggle="true"
+              data-show-columns="true"
+              data-show-pagination-switch="true"
+              data-toolbar="#toolbar"
+              data-click-to-select="true"
+              data-select-item-name="myRadioName"
+              data-page-size="10">
+              <thead>
+                <tr>
+                  <th data-align="center">Selecione</th>
+                  <th data-halign="center" data-align="center">Destaque</th>
+                  <th data-halign="center" data-align="left"  data-sortable="true">Id Jogador</th>
+                  <th data-halign="center" data-align="left" data-field="noticia" data-sortable="true">Id Noticia</th>
+                  <th data-halign="center" data-align="center" data-sortable="true">Título</th>
+                  <th data-halign="center" data-align="center" data-sortable="true">Data</th>
+                  <th data-halign="center" data-align="center">Editar</th>
+                </tr>
+              </thead>
+              <tbody>    
+               <tr>
+               <td><input type="checkbox" value="" name="select"></td>
+               <td class="mailbox-star"><a href="#">
+               
+                 <i class="fa fa-star text-yellow"></i>
+             <i class=\"fa fa-star-o text\"></i>
+                    </a></td>
+                    <td class="mailbox-name"><center><a href="#"><button type="button" class="btn"><i class="glyphicon glyphicon-info-sign"></i></button></center>
+               
+                </a>                            
+                <td class="mailbox-name"><center><a href="#">
+                <button type="button" data-toggle="modal" data-target="#" class="btn btn-success" ><i class="glyphicon glyphicon-list-alt"></i></button></a></center>
+                <td class="mailbox-subject"></td>
+                <td class="mailbox-date"></td>
+                <td class="mailbox-date"><a href="#"><button type="button" class="btn btn-warning btn-xs">Editar</button></a></td>
+                </tr>
+              </tbody>
+            </table>            
+            <!-- /.table -->
+            </form>
+          </div>
+        </div>
+        <!-- /.col -->
+      
       </div>
       <!-- /.row -->
 

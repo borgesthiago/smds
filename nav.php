@@ -43,7 +43,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
-                <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>            
+                <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>
+                <li><a href="#"><i class="fa fa-list"></i> Serviços</a></li>                          
               </ul>          
             </li>  
             <li class="treeview">
@@ -55,7 +56,21 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
-                <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>            
+                <li><a href="#"><i class="fa fa-list"></i> Listar</a></li> 
+                <li><a href="#"><i class="fa fa-list"></i> Serviços</a></li>                         
+              </ul>          
+            </li>  
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-home"></i> <span>CENTRO POP</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+                <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>   
+                <li><a href="#"><i class="fa fa-list"></i> Serviços</a></li>              
               </ul>          
             </li>  
         </li>       
@@ -68,8 +83,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
-            <li><a href="#"><i class="fa fa-list"></i> Listar</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+            <li><a href="listar_recebido.php"><i class="fa fa-list"></i> Listar</a></li>
             <li><a href="#"><i class="fa fa-share-square"></i> Encaminhar</a></li>
           </ul>
         </li>
@@ -147,3 +162,4 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+  

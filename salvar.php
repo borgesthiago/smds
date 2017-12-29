@@ -4,8 +4,64 @@
 <?php require "head.php";?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-<?php require "top.php";?>
- <?php require "nav.php";?>
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="gestor.php" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>P</b>GT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">Painel <b>Gestores</b></span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             
+              <span class="hidden-xs">Thiago Borges</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="img/pmsg.jpg" class="img-circle" alt="User Image">
+                <p>
+                  Thiago Borges - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+           
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+ <?PHP require "nav.php";?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,22 +81,23 @@
     <section class="content">
       <!-- Info boxes -->
       <div class="row">
-        <div class="col-md-10 col-sm-6 col-xs-12">
-			 <!-- general form elements -->
-			 <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Quick Example</h3>
+        <div class="col-md-5 col-sm-6 col-xs-12">
+          
+
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-check"></i> Alerta!</h4>
+                Os dados foram salvo com sucesso.
             </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-           
-          </div>
-          <!-- /.box -->
-		</div>
+        </div>
+        <!-- /.col -->
+      
       </div>
       <!-- /.row -->
 
-         
+      <script language= "JavaScript">
+setTimeout("document.location = 'http://localhost/smds/gestor.php'",2000);
+</script>
         
         </div>
         <!-- /.col -->
